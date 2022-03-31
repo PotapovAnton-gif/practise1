@@ -1,0 +1,14 @@
+---
+- name: install nginx
+  apt: name=nginx state=latest update_cache=yes
+
+- name: start nginx
+  sysvinit: name=nginx state=started enabled=yes
+
+- name: install php-fpm 
+  apt: name=php-fpm state=latest update_cache=yes
+
+- name: statr php-fpm
+  sysvinit: name=php7.4-fpm state=started enabled=yes
+
+# tasks file for nginx

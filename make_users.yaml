@@ -1,0 +1,20 @@
+---
+- name: Create users
+  hosts: test
+  gather_facts: no
+  become: true
+  roles:
+    - nginx
+
+  tasks:
+    - name: Create the user2
+      ansible.builtin.user: 
+        name: user2 
+        group: root
+    
+    - name: Create the user3
+      ansible.builtin.user: 
+        name: user3 
+        group: root
+
+    

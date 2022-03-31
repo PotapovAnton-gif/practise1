@@ -1,0 +1,9 @@
+---
+- name: Istall dnsmasq
+  apt: name=dnsmasq state=latest update_cache=yes
+
+- name: run dnsmasq
+  sysvinit: name=dnsmasq state=started enabled=yes
+
+
+# tasks file for DNS
